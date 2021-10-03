@@ -18,11 +18,17 @@ namespace ClothDonationApp
         protected void SignUpSubmit_Click(object sender, EventArgs e)
         {
             ClothDonationDbEntities db = new ClothDonationDbEntities();
+
             User user = new User
             {
                 Name = Name.Text,
                 Email = Email.Text,
-                Password = Password.Text
+                Password = Password.Text,
+                Address = Address.Text,
+                Role = Convert.ToInt32(RoleList.SelectedItem.Value.ToString()),
+                /*Role = 0,*/
+                City = CityList.SelectedItem.Text,
+               /* City  = "Ahmedabad",*/
             };
             db.Users.Add(user);
             try { db.SaveChanges(); }

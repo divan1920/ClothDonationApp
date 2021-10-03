@@ -14,9 +14,19 @@ namespace ClothDonationApp
     
     public partial class User
     {
+        public User()
+        {
+            this.Donations = new HashSet<Donation>();
+        }
+    
         public int UserId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public int Role { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+    
+        public virtual ICollection<Donation> Donations { get; set; }
     }
 }

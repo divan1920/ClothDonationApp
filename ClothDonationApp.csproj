@@ -73,25 +73,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AllDonation_List.aspx" />
     <Content Include="App_Data\ClothDonationDb.mdf" />
     <Content Include="App_Data\ClothDonationDb_log.ldf">
       <DependentUpon>ClothDonationDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Donation.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="SignUp.aspx" />
-    <Content Include="UserModel.Context.tt">
+    <Content Include="UserDonationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserModel.edmx</DependentUpon>
-      <LastGenOutput>UserModel.Context.cs</LastGenOutput>
+      <DependentUpon>UserDonationModel.edmx</DependentUpon>
+      <LastGenOutput>UserDonationModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="UserModel.tt">
+    <Content Include="UserDonationModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserModel.edmx</DependentUpon>
-      <LastGenOutput>UserModel.cs</LastGenOutput>
+      <DependentUpon>UserDonationModel.edmx</DependentUpon>
+      <LastGenOutput>UserDonationModel.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllDonation_List.aspx.cs">
+      <DependentUpon>AllDonation_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllDonation_List.aspx.designer.cs">
+      <DependentUpon>AllDonation_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Donation.aspx.cs">
+      <DependentUpon>Donation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Donation.aspx.designer.cs">
+      <DependentUpon>Donation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Donation.cs">
+      <DependentUpon>UserDonationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,32 +127,32 @@
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>UserModel.tt</DependentUpon>
+      <DependentUpon>UserDonationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserModel.Context.cs">
+    <Compile Include="UserDonationModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.Context.tt</DependentUpon>
+      <DependentUpon>UserDonationModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserModel.cs">
+    <Compile Include="UserDonationModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.tt</DependentUpon>
+      <DependentUpon>UserDonationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserModel.Designer.cs">
+    <Compile Include="UserDonationModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.edmx</DependentUpon>
+      <DependentUpon>UserDonationModel.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <EntityDeploy Include="UserModel.edmx">
+    <EntityDeploy Include="UserDonationModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>UserDonationModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="UserModel.edmx.diagram">
-      <DependentUpon>UserModel.edmx</DependentUpon>
+    <Content Include="UserDonationModel.edmx.diagram">
+      <DependentUpon>UserDonationModel.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
