@@ -1,0 +1,41 @@
+﻿body {
+    box-sizing:border-box;
+}
+.active {
+    color: coral;
+}
+
+.navbar-brand:hover {
+    transition: 0.5s;
+    border-radius:10%;
+    background-color: grey;
+    color: black;
+}
+
+.nav-link:hover {
+    transition: 0.7s;
+    border-radius: 10px;
+    background-color: coral;
+    color: black;
+}
+
+.btn-coral{
+    transition:0.5s;
+    background-color:coral;
+    border-radius:10px;
+    color:black;
+}
+.btn-coral:hover {
+    transition:0.5s;
+    background-color: lightcoral;
+    border-radius: 20px;
+    color:white;
+}
+.side-Image{
+    padding-top:20px;
+    width: 95%;
+    height:100%;
+}
+.login-footer{
+    margin-top:100px;
+}
