@@ -45,5 +45,13 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Donation" EntitySet="Donations" />
     </AssociationSet>
+    <EntitySet Name="Cities" EntityType="ClothDonationDbModel.City" />
   </EntityContainer>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

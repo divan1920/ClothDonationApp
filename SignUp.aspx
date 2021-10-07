@@ -71,7 +71,7 @@
 
                 Where You Live : 
             <div class="form-group">
-                <asp:DropDownList class="form-control" ID="CityList" runat="server">
+                <asp:DropDownList class="form-control" ID="CityList" runat="server" DataSourceID="SqlDataSource1" DataTextField="CityName" DataValueField="CityName">
                     <asp:ListItem>Ahmedabad</asp:ListItem>
                     <asp:ListItem>Nadiad</asp:ListItem>
                     <asp:ListItem>Surat</asp:ListItem>
@@ -100,7 +100,8 @@
         <footer class="container-fluid bg-dark p-3">
             <div class="text-white text-center">Copyright ©2021 | All rights reserved by  <span class="text-white-50"><i><asp:LinkButton ID="FooterButton" class="text-white-50" runat="server" PostBackUrl="~/Home.aspx">Salvation Foundation</asp:LinkButton></i></span></div>
         </footer>
-    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-</body>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GridviewUserConnection %>" SelectCommand="SELECT * FROM [City]"></asp:SqlDataSource>
+    </form>
+    </body>
 </html>

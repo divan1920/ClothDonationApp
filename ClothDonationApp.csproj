@@ -86,6 +86,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="UpdateDonation.aspx" />
     <Content Include="UserDonationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UserDonationModel.edmx</DependentUpon>
@@ -113,6 +114,9 @@
     </Compile>
     <Compile Include="AllDonation_List.aspx.designer.cs">
       <DependentUpon>AllDonation_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>UserDonationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DonarHome.aspx.cs">
       <DependentUpon>DonarHome.aspx</DependentUpon>
@@ -155,6 +159,13 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDonation.aspx.cs">
+      <DependentUpon>UpdateDonation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDonation.aspx.designer.cs">
+      <DependentUpon>UpdateDonation.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>UserDonationModel.tt</DependentUpon>

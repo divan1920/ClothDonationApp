@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ClothDonationDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Donation">
           <Key>
             <PropertyRef Name="DonationId" />
@@ -42,6 +49,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ClothDonationDbModelStoreContainer">
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Donation" EntityType="Self.Donation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Donation" Association="Self.FK_Donation">
@@ -98,7 +106,15 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Donation" EntitySet="Donations" />
           </AssociationSet>
+          <EntitySet Name="Cities" EntityType="ClothDonationDbModel.City" />
         </EntityContainer>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -128,6 +144,14 @@
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="ClothDonationDbModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

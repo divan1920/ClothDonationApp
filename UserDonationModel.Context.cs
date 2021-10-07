@@ -27,5 +27,6 @@ namespace ClothDonationApp
     
         public DbSet<Donation> Donations { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<City> Cities { get; set; }
     }
 }
