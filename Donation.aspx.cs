@@ -27,7 +27,7 @@ namespace ClothDonationApp
                 
                 UserId = (int)Session["UserId"],
                 DonarName = DonarName.Text,
-                Mobile = MobileNo.Text,
+                Mobile = Convert.ToInt32(MobileNo.Text),
                 City = CityList.SelectedItem.Text,
                 ContentSize = ContentList.SelectedItem.Text,
                 Status = "Pending",
@@ -47,6 +47,7 @@ namespace ClothDonationApp
                     }
                 }
             }
+            
         }
 
         protected void UserName_TextChanged(object sender, EventArgs e)

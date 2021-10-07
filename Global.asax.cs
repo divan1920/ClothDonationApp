@@ -17,7 +17,8 @@ namespace ClothDonationApp
 
         protected void Session_Start(object sender, EventArgs e)
         {
-           
+            // Session["Username"] = "jay";
+            // Session["UserId"] = "6"; //I don't know the id
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

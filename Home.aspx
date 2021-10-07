@@ -15,7 +15,7 @@
                 <asp:Label ID="Username" runat="server"></asp:Label>
             </h2>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
             <div class="container-fluid">
                 <a href="#" class="text-white px-3 navbar-brand">Salvation</a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav>-->
         <p>
             &nbsp;
         </p>
@@ -64,23 +64,26 @@
         <asp:SqlDataSource ID="UserData" runat="server" ConnectionString="<%$ ConnectionStrings:GridviewUserConnection %>" SelectCommand="SELECT * FROM [User]"></asp:SqlDataSource>
  <h2>Donations List</h2>
         <p>
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="DonationId" DataSourceID="DonationData">
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="DonationId" DataSourceID="DonationData" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="DonationId" HeaderText="DonationId" ReadOnly="True" SortExpression="DonationId" />
+                    <asp:BoundField DataField="DonationId" HeaderText="DonationId" ReadOnly="True" SortExpression="DonationId" InsertVisible="False" />
                     <asp:BoundField DataField="UserId" HeaderText="UserId" SortExpression="UserId" />
                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
                     <asp:BoundField DataField="ContentSize" HeaderText="ContentSize" SortExpression="ContentSize" />
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
+                    <asp:BoundField DataField="DonarName" HeaderText="DonarName" SortExpression="DonarName" />
+                    <asp:BoundField DataField="Mobile" HeaderText="Mobile" SortExpression="Mobile" />
                 </Columns>
-                <FooterStyle BackColor="White" ForeColor="#000066" />
-                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                <RowStyle ForeColor="#000066" />
-                <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                <SortedDescendingHeaderStyle BackColor="#00547E" />
+                <FooterStyle BackColor="#990000" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                <RowStyle ForeColor="#333333" BackColor="#FFFBD6" />
+                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                <SortedDescendingHeaderStyle BackColor="#820000" />
             </asp:GridView>
         </p>
         <asp:SqlDataSource ID="DonationData" runat="server" ConnectionString="<%$ ConnectionStrings:GridviewUserConnection %>" SelectCommand="SELECT * FROM [Donation]"></asp:SqlDataSource>
@@ -88,12 +91,14 @@
         <p>
             <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="DonationId,UserId1" DataSourceID="UserDonation_Relation" GridLines="Horizontal">
                 <Columns>
-                    <asp:BoundField DataField="DonationId" HeaderText="DonationId" ReadOnly="True" SortExpression="DonationId" />
+                    <asp:BoundField DataField="DonationId" HeaderText="DonationId" ReadOnly="True" SortExpression="DonationId" InsertVisible="False" />
                     <asp:BoundField DataField="UserId" HeaderText="UserId" SortExpression="UserId" />
                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
                     <asp:BoundField DataField="ContentSize" HeaderText="ContentSize" SortExpression="ContentSize" />
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                    <asp:BoundField DataField="UserId1" HeaderText="UserId1" InsertVisible="False" ReadOnly="True" SortExpression="UserId1" />
+                    <asp:BoundField DataField="DonarName" HeaderText="DonarName" SortExpression="DonarName" />
+                    <asp:BoundField DataField="Mobile" HeaderText="Mobile" SortExpression="Mobile" />
+                    <asp:BoundField DataField="UserId1" HeaderText="UserId1" SortExpression="UserId1" InsertVisible="False" ReadOnly="True" />
                     <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                     <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />

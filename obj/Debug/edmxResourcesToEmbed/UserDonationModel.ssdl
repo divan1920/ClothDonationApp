@@ -10,7 +10,7 @@
     <Property Name="ContentSize" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="DonarName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Mobile" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Mobile" Type="numeric" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>

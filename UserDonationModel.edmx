@@ -15,7 +15,7 @@
           <Property Name="ContentSize" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="DonarName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Mobile" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Mobile" Type="numeric" Precision="10" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -64,7 +64,7 @@
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Donation" FromRole="Donation" ToRole="User" />
           <Property Name="DonarName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Mobile" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
         </EntityType>
         <EntityType Name="User">
           <Key>

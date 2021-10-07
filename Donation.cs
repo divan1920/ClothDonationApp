@@ -20,7 +20,7 @@ namespace ClothDonationApp
         public string ContentSize { get; set; }
         public string Status { get; set; }
         public string DonarName { get; set; }
-        public string Mobile { get; set; }
+        public decimal Mobile { get; set; }
     
         public virtual User User { get; set; }
     }
