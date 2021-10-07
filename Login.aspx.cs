@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace ClothDonationApp
 {
@@ -15,14 +16,27 @@ namespace ClothDonationApp
         }
 
         protected void LoginSubmit_Click(object sender, EventArgs e)
-        {
+        { 
             string name = Name.Text;
             string password = Password.Text;
             ClothDonationDbEntities db = new ClothDonationDbEntities();
             User user = db.Users.Where(u => u.Name == name).FirstOrDefault<User>();
-            if (user != null && password == user.Password)
+            if (user != null && password.Equals(user.Password))
             {
-                Response.Redirect("~/Donation.aspx");
+                Session["UserId"] = user.UserId;
+                Session["Username"] = user.Name;
+                if (user.Role.Equals(0))
+                {
+                    Response.Redirect("~/DonarHome.aspx");
+                }
+                else if(user.Role.Equals(1))
+                {
+                    Response.Redirect("~/VolunteerHome.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/AdminHome.aspx");
+                }
             }
             else
             {

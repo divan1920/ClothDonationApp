@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Donations">
       <EntityTypeMapping TypeName="ClothDonationDbModel.Donation">
         <MappingFragment StoreEntitySet="Donation">
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="DonarName" ColumnName="DonarName" />
           <ScalarProperty Name="DonationId" ColumnName="DonationId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="City" ColumnName="City" />

@@ -69,6 +69,15 @@ namespace ClothDonationApp
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
+        /// UserNameRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired;
+
+        /// <summary>
         /// Name control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace ClothDonationApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Name;
+
+        /// <summary>
+        /// PasswordRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequired;
 
         /// <summary>
         /// Password control.

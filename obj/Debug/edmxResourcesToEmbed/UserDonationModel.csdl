@@ -10,6 +10,8 @@
     <Property Name="ContentSize" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="User" Relationship="Self.FK_Donation" FromRole="Donation" ToRole="User" />
+    <Property Name="DonarName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="User">
     <Key>

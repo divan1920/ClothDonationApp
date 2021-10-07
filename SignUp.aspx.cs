@@ -12,7 +12,7 @@ namespace ClothDonationApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void SignUpSubmit_Click(object sender, EventArgs e)
@@ -26,9 +26,7 @@ namespace ClothDonationApp
                 Password = Password.Text,
                 Address = Address.Text,
                 Role = Convert.ToInt32(RoleList.SelectedItem.Value.ToString()),
-                /*Role = 0,*/
                 City = CityList.SelectedItem.Text,
-               /* City  = "Ahmedabad",*/
             };
             db.Users.Add(user);
             try { db.SaveChanges(); }
@@ -47,5 +45,7 @@ namespace ClothDonationApp
 
             //Response.Redirect("Home.aspx");
         }
+
+        
     }
 }

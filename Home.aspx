@@ -4,13 +4,41 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Home | Cloth Donation</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <h2>This is Home </h2>
+            <h2>This is Home for
+                <asp:Label ID="Username" runat="server"></asp:Label>
+            </h2>
         </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a href="#" class="text-white px-3 navbar-brand">Salvation</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item text-white nav-link active">Home</a>
+                        <asp:HyperLink ID="HyperLink1" href="#" runat="server" class="nav-item text-white nav-link ">Contact Us</asp:HyperLink>
+                        <a href="#" class="nav-item text-white nav-link ">About us</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Home.aspx">View</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Donation.aspx">Donation</asp:LinkButton>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <p>
+            &nbsp;
+        </p>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="UserId" DataSourceID="UserData" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>

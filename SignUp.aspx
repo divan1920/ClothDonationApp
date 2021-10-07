@@ -5,24 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .auto-style2 {
-            width: 201px;
-        }
-
-        .auto-style3 {
-            width: 201px;
-            height: 26px;
-        }
-
-        .auto-style4 {
-            height: 26px;
-        }
-
-        .auto-style5 {
-            width: 68%;
-        }
-    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
     <link href="css/style.css" rel="stylesheet" />
 </head>
@@ -98,10 +80,9 @@
 
                 Who are You ?
             <div class="form-group">
-                <asp:DropDownList class="form-control" ID="RoleList" runat="server">
-                    <asp:ListItem Value="0">Donator</asp:ListItem>
+                <asp:DropDownList class="form-control" ID="RoleList" runat="server" >
+                    <asp:ListItem Value="0">Donar</asp:ListItem>
                     <asp:ListItem Value="1">Volunteer</asp:ListItem>
-                    <asp:ListItem Value="2">Admin</asp:ListItem>
                 </asp:DropDownList>
             </div>
 

@@ -4,16 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ClothDonationDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ClothDonationDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Donation">
           <Key>
             <PropertyRef Name="DonationId" />
           </Key>
-          <Property Name="DonationId" Type="int" Nullable="false" />
+          <Property Name="DonationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ContentSize" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DonarName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mobile" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -47,8 +49,7 @@
             <End Role="Donation" EntitySet="Donation" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ClothDonationDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -62,6 +63,8 @@
           <Property Name="ContentSize" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Donation" FromRole="Donation" ToRole="User" />
+          <Property Name="DonarName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -105,6 +108,8 @@
           <EntitySetMapping Name="Donations">
             <EntityTypeMapping TypeName="ClothDonationDbModel.Donation">
               <MappingFragment StoreEntitySet="Donation">
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="DonarName" ColumnName="DonarName" />
                 <ScalarProperty Name="DonationId" ColumnName="DonationId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="City" ColumnName="City" />

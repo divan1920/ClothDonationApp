@@ -20,10 +20,15 @@
         <div>
             <table align="left" class="auto-style1">
                 <tr>
-                    <td class="auto-style2">User ID : </td>
+                    <td class="auto-style2">Donar Name:</td>
                     <td>
-                        <asp:DropDownList ID="UserList" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="UserId">
-                        </asp:DropDownList>
+                        <asp:TextBox ID="DonarName" runat="server" ToolTip="Enter Donar's Name"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">Mobile No:</td>
+                    <td>
+                        <asp:TextBox ID="MobileNo" runat="server" TextMode="Phone" ToolTip="Enter your contact Number"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

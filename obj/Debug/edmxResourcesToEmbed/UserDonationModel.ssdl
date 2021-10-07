@@ -4,11 +4,13 @@
     <Key>
       <PropertyRef Name="DonationId" />
     </Key>
-    <Property Name="DonationId" Type="int" Nullable="false" />
+    <Property Name="DonationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="ContentSize" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DonarName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mobile" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>

@@ -12,16 +12,22 @@ namespace ClothDonationApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserId"] == null || Session["Username"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
         }
 
         protected void Donation_Submit_Click(object sender, EventArgs e)
         {
             ClothDonationDbEntities db = new ClothDonationDbEntities();
-
+            
             Donation donation = new Donation
             {
-                UserId = Convert.ToInt32(UserList.SelectedItem.Value.ToString()),
+                
+                UserId = (int)Session["UserId"],
+                DonarName = DonarName.Text,
+                Mobile = MobileNo.Text,
                 City = CityList.SelectedItem.Text,
                 ContentSize = ContentList.SelectedItem.Text,
                 Status = "Pending",
@@ -41,6 +47,11 @@ namespace ClothDonationApp
                     }
                 }
             }
+        }
+
+        protected void UserName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

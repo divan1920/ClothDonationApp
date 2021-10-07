@@ -73,13 +73,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminHome.aspx" />
     <Content Include="AllDonation_List.aspx" />
     <Content Include="App_Data\ClothDonationDb.mdf" />
     <Content Include="App_Data\ClothDonationDb_log.ldf">
       <DependentUpon>ClothDonationDb.mdf</DependentUpon>
     </Content>
     <Content Include="css\style.css" />
+    <Content Include="DonarHome.aspx" />
     <Content Include="Donation.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
@@ -93,15 +96,30 @@
       <DependentUpon>UserDonationModel.edmx</DependentUpon>
       <LastGenOutput>UserDonationModel.cs</LastGenOutput>
     </Content>
+    <Content Include="VolunteerHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AllDonation_List.aspx.cs">
       <DependentUpon>AllDonation_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AllDonation_List.aspx.designer.cs">
       <DependentUpon>AllDonation_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonarHome.aspx.cs">
+      <DependentUpon>DonarHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonarHome.aspx.designer.cs">
+      <DependentUpon>DonarHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Donation.aspx.cs">
       <DependentUpon>Donation.aspx</DependentUpon>
@@ -112,6 +130,9 @@
     </Compile>
     <Compile Include="Donation.cs">
       <DependentUpon>UserDonationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -152,6 +173,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserDonationModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="VolunteerHome.aspx.cs">
+      <DependentUpon>VolunteerHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VolunteerHome.aspx.designer.cs">
+      <DependentUpon>VolunteerHome.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

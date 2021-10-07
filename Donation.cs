@@ -19,6 +19,8 @@ namespace ClothDonationApp
         public string City { get; set; }
         public string ContentSize { get; set; }
         public string Status { get; set; }
+        public string DonarName { get; set; }
+        public string Mobile { get; set; }
     
         public virtual User User { get; set; }
     }
