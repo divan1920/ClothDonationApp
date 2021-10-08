@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Update Donation | Cloth Donation</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
-    <link href="css/style.css" rel="stylesheet" />
+   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <link href="css/style.css" rel="stylesheet" /> -->
 </head>
 <body>
     
@@ -29,6 +29,68 @@
                         <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
                         <asp:LinkButton ID="LinkButton3" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Home.aspx">View</asp:LinkButton>
                         <asp:LinkButton ID="LinkButton4" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Donation.aspx">Donation</asp:LinkButton>
+                        <br />
+                        <br />
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="DonationId" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" >
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                <asp:BoundField DataField="DonationId" HeaderText="DonationId" InsertVisible="False" ReadOnly="True" SortExpression="DonationId" />
+                                <asp:BoundField DataField="UserId" HeaderText="UserId" SortExpression="UserId" />
+                                <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
+                                <asp:BoundField DataField="ContentSize" HeaderText="ContentSize" SortExpression="ContentSize" />
+                                <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
+                                <asp:BoundField DataField="DonarName" HeaderText="DonarName" SortExpression="DonarName" />
+                                <asp:BoundField DataField="Mobile" HeaderText="Mobile" SortExpression="Mobile" />
+                            </Columns>
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GridviewUserConnection %>" SelectCommand="SELECT * FROM [Donation] WHERE ([UserId] = @UserId)" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [Donation] WHERE [DonationId] = @original_DonationId AND [UserId] = @original_UserId AND [City] = @original_City AND [ContentSize] = @original_ContentSize AND [Status] = @original_Status AND [DonarName] = @original_DonarName AND [Mobile] = @original_Mobile" InsertCommand="INSERT INTO [Donation] ([UserId], [City], [ContentSize], [Status], [DonarName], [Mobile]) VALUES (@UserId, @City, @ContentSize, @Status, @DonarName, @Mobile)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [Donation] SET [UserId] = @UserId, [City] = @City, [ContentSize] = @ContentSize, [Status] = @Status, [DonarName] = @DonarName, [Mobile] = @Mobile WHERE [DonationId] = @original_DonationId AND [UserId] = @original_UserId AND [City] = @original_City AND [ContentSize] = @original_ContentSize AND [Status] = @original_Status AND [DonarName] = @original_DonarName AND [Mobile] = @original_Mobile">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_DonationId" Type="Int32" />
+                                <asp:Parameter Name="original_UserId" Type="Int32" />
+                                <asp:Parameter Name="original_City" Type="String" />
+                                <asp:Parameter Name="original_ContentSize" Type="String" />
+                                <asp:Parameter Name="original_Status" Type="String" />
+                                <asp:Parameter Name="original_DonarName" Type="String" />
+                                <asp:Parameter Name="original_Mobile" Type="Decimal" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="UserId" Type="Int32" />
+                                <asp:Parameter Name="City" Type="String" />
+                                <asp:Parameter Name="ContentSize" Type="String" />
+                                <asp:Parameter Name="Status" Type="String" />
+                                <asp:Parameter Name="DonarName" Type="String" />
+                                <asp:Parameter Name="Mobile" Type="Decimal" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="UserId" SessionField="UserId" Type="Int32" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="UserId" Type="Int32" />
+                                <asp:Parameter Name="City" Type="String" />
+                                <asp:Parameter Name="ContentSize" Type="String" />
+                                <asp:Parameter Name="Status" Type="String" />
+                                <asp:Parameter Name="DonarName" Type="String" />
+                                <asp:Parameter Name="Mobile" Type="Decimal" />
+                                <asp:Parameter Name="original_DonationId" Type="Int32" />
+                                <asp:Parameter Name="original_UserId" Type="Int32" />
+                                <asp:Parameter Name="original_City" Type="String" />
+                                <asp:Parameter Name="original_ContentSize" Type="String" />
+                                <asp:Parameter Name="original_Status" Type="String" />
+                                <asp:Parameter Name="original_DonarName" Type="String" />
+                                <asp:Parameter Name="original_Mobile" Type="Decimal" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </div>
                 </div>
             </div>
@@ -36,47 +98,7 @@
 
         <%------------ Hero Section -------------%>
 
-        <div class="row">
-            <div class="container col-md-6 px-5 ">
-                <h2 class="py-3  text-sm-center">Update a Donation</h2>
-                <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
-
-                <div class="form-group my-3">
-                    Donor Name :                
-                        <asp:TextBox ID="DonarName" class="form-control" placeholder="Enter Donor's Name" runat="server" ToolTip="Enter Donar's Name"></asp:TextBox>
-                </div>
-
-                <div class="form-group my-3">
-                    Mobile Number :                
-                        <asp:TextBox ID="MobileNo" runat="server" class="form-control" placeholder="Enter Donor's Mobile Number" TextMode="Phone" ToolTip="Enter your contact Number"></asp:TextBox>
-                </div>
-
-                <div class="form-group my-3">
-                    Choose City :                
-                    <asp:DropDownList ID="CityList" runat="server" class="form-control" DataSourceID="SqlDataSource2" DataTextField="CityName" DataValueField="CityName">
-                        <asp:ListItem>Ahmedabad</asp:ListItem>
-                        <asp:ListItem>Nadiad</asp:ListItem>
-                        <asp:ListItem>Surat</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-
-                <div class="form-group my-3">
-                    Content Size :                
-                     <asp:DropDownList ID="ContentList" class="form-control" runat="server">
-                         <asp:ListItem>Low</asp:ListItem>
-                         <asp:ListItem>Medium</asp:ListItem>
-                         <asp:ListItem>High</asp:ListItem>
-                     </asp:DropDownList>
-                </div>
-
-                <div class="text-center form-group">
-                    <asp:Button ID="UpdateDonation_Submit" runat="server" class="form-control btn-primary px-3" OnClick="UpdateDonation_Submit_Click" Text="Update" />
-                </div>
-            </div>
-        </div>
-
-        <asp:Label ID="Label1" runat="server" />
-
+        
 
         <%------ footer -------%>
         <footer class="container-fluid bg-dark p-3 mt-5 login-footer">

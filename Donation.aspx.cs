@@ -12,10 +12,12 @@ namespace ClothDonationApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserId"] == null || Session["Username"] == null)
+            if (!(Session["UserId"] != null && Session["Username"] != null))
             {
+                Session["ErrorMsg"] = "Please Log in";
                 Response.Redirect("~/Login.aspx");
             }
+            
         }
 
         protected void Donation_Submit_Click(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace ClothDonationApp
             Donation donation = new Donation
             {
                 
-                UserId = (int)Session["UserId"],
+                UserId = Convert.ToInt32(Session["UserId"]),
                 DonarName = DonarName.Text,
                 Mobile = Convert.ToInt32(MobileNo.Text),
                 City = CityList.SelectedItem.Text,
@@ -43,11 +45,11 @@ namespace ClothDonationApp
                     Console.WriteLine("Entity of type \" {0}\" in state \" {1}\" has the following validation errors :", eve.Entry.Entity.GetType().Name, eve.Entry.State);
                     foreach (var ev in eve.ValidationErrors)
                     {
-                        Label1.Text = "-Property:" + ev.PropertyName + ", Error: " + ev.ErrorMessage;
+                        Label2.Text = "-Property:" + ev.PropertyName + ", Error: " + ev.ErrorMessage;
                     }
                 }
             }
-            
+            Response.Redirect("~/UpdateDonation.aspx");
         }
 
         protected void UserName_TextChanged(object sender, EventArgs e)

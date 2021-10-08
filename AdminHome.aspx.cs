@@ -11,7 +11,17 @@ namespace ClothDonationApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!(Session["Username"] != null && Session["UserId"] != null))
+            {
+                Session["ErrorMsg"] = "Please Log in";
+                Response.Redirect("~/Login.aspx");
+            }
+            else if(!Session["Role"].Equals(2))
+            {
+                Session.Abandon();
+                Session["ErrorMsg"] = "you are not an admin.";
+                Response.Redirect("~/Login.aspx");
+            }
         }
     }
 }

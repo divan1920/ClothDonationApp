@@ -43,7 +43,7 @@ namespace ClothDonationApp
                 }
             }
 
-            //Response.Redirect("Home.aspx");
+            Response.Redirect("~/Login.aspx");
         }
 
         

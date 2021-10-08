@@ -58,7 +58,7 @@
 
                 <div class="form-group">
                     Confirm Password :             
-                <asp:TextBox ID="ConfirmPassword" class="form-control" runat="server" placeholder="Confirm Your Password"></asp:TextBox>
+                <asp:TextBox ID="ConfirmPassword" class="form-control" runat="server" placeholder="Confirm Your Password" TextMode="Password"></asp:TextBox>
                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator_ConfirmPassword" runat="server" Display="Dynamic" ErrorMessage="*Confirm PassWord is Mandatory" ForeColor="Red" ControlToValidate="ConfirmPassword"></asp:RequiredFieldValidator>--%>
                 </div>
 

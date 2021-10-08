@@ -78,6 +78,15 @@ namespace ClothDonationApp
         protected global::System.Web.UI.WebControls.TextBox DonarName;
 
         /// <summary>
+        /// RequiredDonarName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredDonarName;
+
+        /// <summary>
         /// MobileNo control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace ClothDonationApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MobileNo;
+
+        /// <summary>
+        /// MobileNumberRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator MobileNumberRequired;
 
         /// <summary>
         /// CityList control.
@@ -130,24 +148,6 @@ namespace ClothDonationApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton FooterButton;
-
-        /// <summary>
-        /// LinkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-
-        /// <summary>
-        /// LinkButton2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
 
         /// <summary>
         /// SqlDataSource1 control.

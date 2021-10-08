@@ -73,6 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddCity.aspx" />
     <Content Include="AdminHome.aspx" />
     <Content Include="AllDonation_List.aspx" />
     <Content Include="App_Data\ClothDonationDb.mdf" />
@@ -85,6 +86,10 @@
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ManageCity.aspx" />
+    <Content Include="ManageDonar.aspx" />
+    <Content Include="ManagePickup.aspx" />
+    <Content Include="ManageVolunteer.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="UpdateDonation.aspx" />
     <Content Include="UserDonationModel.Context.tt">
@@ -101,6 +106,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCity.aspx.cs">
+      <DependentUpon>AddCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCity.aspx.designer.cs">
+      <DependentUpon>AddCity.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminHome.aspx.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +163,34 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCity.aspx.cs">
+      <DependentUpon>ManageCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCity.aspx.designer.cs">
+      <DependentUpon>ManageCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDonar.aspx.cs">
+      <DependentUpon>ManageDonar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageDonar.aspx.designer.cs">
+      <DependentUpon>ManageDonar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePickup.aspx.cs">
+      <DependentUpon>ManagePickup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagePickup.aspx.designer.cs">
+      <DependentUpon>ManagePickup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageVolunteer.aspx.cs">
+      <DependentUpon>ManageVolunteer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageVolunteer.aspx.designer.cs">
+      <DependentUpon>ManageVolunteer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">

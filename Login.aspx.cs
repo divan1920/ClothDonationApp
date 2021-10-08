@@ -12,7 +12,7 @@ namespace ClothDonationApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label1.Text = Session["ErrorMsg"].ToString();
         }
 
         protected void LoginSubmit_Click(object sender, EventArgs e)
@@ -25,6 +25,8 @@ namespace ClothDonationApp
             {
                 Session["UserId"] = user.UserId;
                 Session["Username"] = user.Name;
+                Session["Role"] = user.Role;
+                Session["City"] = user.City;
                 if (user.Role.Equals(0))
                 {
                     Response.Redirect("~/DonarHome.aspx");

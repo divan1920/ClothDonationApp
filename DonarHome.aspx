@@ -25,7 +25,7 @@
                         <a href="#" class="nav-item text-white nav-link ">About us</a>
                     </div>
                     <div class="navbar-nav">
-                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
+                        <asp:Button ID="Logout" runat="server" class="nav-item text-white nav-link " Text="Logout" />
                         <asp:LinkButton ID="LinkButton1" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Home.aspx">View</asp:LinkButton>
                         <asp:LinkButton ID="LinkButton2" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Donation.aspx">Donation</asp:LinkButton>
                     </div>
@@ -62,20 +62,15 @@
             <div class="card col-sm-3 m-3 ml-5">
                 <img src="images/UpdatePickUp.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title pt-3">Update Details</h5>
+                    <h5 class="card-title pt-3">Manage Pickup Details</h5>
                     <p class="card-text">Click here to book Pickup for Your Donation. You can Donate Books , CLothes , Furniture , etc to Needed Person.</p>
-                <asp:Button ID="UpdateDonation" runat="server" PostBackUrl="~/UpdateDonation.aspx" Text="Update &#8614;" CssClass="btn btn-primary" />
+                <asp:Button ID="UpdateDonation" runat="server" PostBackUrl="~/UpdateDonation.aspx" Text="Manage ↦" CssClass="btn btn-primary" />
                 </div>
             </div>
 
 
-            <div class="card col-sm-3 m-3 ml-5">
-                <img src="images/CamcelPickUp.png" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <h5 class="card-title pt-1">Delete PickUp</h5>
-                    <p class="card-text">Click here to book Pickup for Your Donation. You can Donate Books , CLothes , Furniture , etc to Needed Person.</p>
-                    <a href="#" class="btn btn-primary">Delete</a>
-                </div>
+            
+&nbsp;</div>
             </div>
         </div>
 
