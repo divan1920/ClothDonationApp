@@ -20,14 +20,13 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="#" class="nav-item text-white nav-link active">Home</a>
-                        <a href="#" class="nav-item text-white nav-link ">Contact Us</a>
-                        <a href="#" class="nav-item text-white nav-link ">About us</a>
+                        <asp:LinkButton ID="Home" class="nav-item text-white nav-link active" runat="server" PostBackUrl="~/Login.aspx">Home</asp:LinkButton>
+                        <asp:LinkButton ID="Contact" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/ContactUs.aspx">Contact Us</asp:LinkButton>
+                        <asp:LinkButton ID="About" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Aboutus.aspx">About Us</asp:LinkButton>
                     </div>
                     <div class="navbar-nav">
-                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx">Login Now</asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton1" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Home.aspx">View</asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton2" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Donation.aspx">Donation</asp:LinkButton>
+                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
+                        <asp:LinkButton ID="Login" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -80,7 +79,7 @@
 
                 Who are You ?
             <div class="form-group">
-                <asp:DropDownList class="form-control" ID="RoleList" runat="server" >
+                <asp:DropDownList class="form-control" ID="RoleList" runat="server">
                     <asp:ListItem Value="0">Donar</asp:ListItem>
                     <asp:ListItem Value="1">Volunteer</asp:ListItem>
                 </asp:DropDownList>
@@ -98,10 +97,11 @@
 
         <%--------- Footer --------%>
         <footer class="container-fluid bg-dark p-3">
-            <div class="text-white text-center">Copyright ©2021 | All rights reserved by  <span class="text-white-50"><i><asp:LinkButton ID="FooterButton" class="text-white-50" runat="server" PostBackUrl="~/Home.aspx">Salvation Foundation</asp:LinkButton></i></span></div>
+            <div class="text-white text-center">Copyright ©2021 | All rights reserved by  <span class="text-white-50"><i>
+                <asp:LinkButton ID="FooterButton" class="text-white-50" runat="server" PostBackUrl="~/Home.aspx">Salvation Foundation</asp:LinkButton></i></span></div>
         </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GridviewUserConnection %>" SelectCommand="SELECT * FROM [City]"></asp:SqlDataSource>
     </form>
-    </body>
+</body>
 </html>

@@ -20,14 +20,14 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="#" class="nav-item text-white nav-link active">Home</a>
-                        <asp:HyperLink ID="HyperLink1" href="#" runat="server" class="nav-item text-white nav-link ">Contact Us</asp:HyperLink>
-                        <a href="#" class="nav-item text-white nav-link ">About us</a>
+                        <asp:LinkButton ID="Home" class="nav-item text-white nav-link active" runat="server" PostBackUrl="~/DonorHome.aspx">Home</asp:LinkButton>
+                        <asp:LinkButton ID="Contact" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/ContactUs.aspx">Contact Us</asp:LinkButton>
+                        <asp:LinkButton ID="About" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Aboutus.aspx">About Us</asp:LinkButton>
                     </div>
                     <div class="navbar-nav">
-                        <asp:Button ID="Logout" runat="server" class="nav-item text-white nav-link " Text="Logout" />
-                        <asp:LinkButton ID="LinkButton1" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Home.aspx">View</asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton2" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Donation.aspx">Donation</asp:LinkButton>
+                        <asp:Button ID="Logout" runat="server" class="nav-item text-white nav-link bg-danger logout" Text="Logout" style="border:0px; border-radius:5px"/>
+                        <%--<asp:LinkButton ID="LinkButton1" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Home.aspx">View</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Donation.aspx">Donation</asp:LinkButton>--%>
                     </div>
                 </div>
             </div>
@@ -48,30 +48,29 @@
         <h2 class="text-center Links-Heading">How We Work
             <hr class="mt-2 mb-4" />
         </h2>
-
         <div class="row pl-5 pr-5 text-center Links-Cards">
-            <div class="card col-sm-3 m-3">
+            <div class="card col-sm-5 m-3">
                 <img src="images/PickUp.png" class="card-img-top" alt="Pickup">
                 <div class="card-body text-center">
                     <h5 class="card-title">Book PickUp</h5>
-                    <p class="card-text">Click here to book Pickup for Your Donation. You can Donate Books , CLothes , Furniture , etc to Needed Person.</p>
-                <asp:Button ID="BookPickUp1" runat="server" PostBackUrl="~/Donation.aspx" Text="Book &#8614;" CssClass="btn btn-primary" />
+                    <p class="card-text">Click here to book Pickup for Your Donation. You can Donate Books , Clothes , Furniture , etc to Needed Person.</p>
+                    <asp:Button ID="BookPickUp1" runat="server" PostBackUrl="~/Donation.aspx" Text="Book &#8614;" CssClass="btn btn-primary" />
                 </div>
             </div>
 
-            <div class="card col-sm-3 m-3 ml-5">
+
+            <div class="card col-sm-5 m-3 ml-5">
                 <img src="images/UpdatePickUp.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title pt-3">Manage Pickup Details</h5>
-                    <p class="card-text">Click here to book Pickup for Your Donation. You can Donate Books , CLothes , Furniture , etc to Needed Person.</p>
-                <asp:Button ID="UpdateDonation" runat="server" PostBackUrl="~/UpdateDonation.aspx" Text="Manage ↦" CssClass="btn btn-primary" />
+                    <h5 class="card-title pt-4">Manage Pickup Details</h5>
+                    <p class="card-text">Click here to Manage all of your donations. Here you can view,update & delete the donations details as per require.</p>
+                    <asp:Button ID="UpdateDonation" runat="server" PostBackUrl="~/UpdateDonation.aspx" Text="Manage ↦" CssClass="btn btn-primary" />
                 </div>
             </div>
 
 
-            
-&nbsp;</div>
-            </div>
+
+            &nbsp;
         </div>
 
         <%------ footer -------%>

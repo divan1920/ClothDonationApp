@@ -20,14 +20,14 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="#" class="nav-item text-white nav-link active">Home</a>
-                        <asp:HyperLink ID="HyperLink1" href="#" runat="server" class="nav-item text-white nav-link ">Contact Us</asp:HyperLink>
-                        <a href="#" class="nav-item text-white nav-link ">About us</a>
-                    </div>
+                    <div class="navbar-nav">
+                        <asp:LinkButton ID="Home" class="nav-item text-white nav-link active mr-2" runat="server" PostBackUrl="~/AdminHome.aspx">Home</asp:LinkButton>
+                        <asp:LinkButton ID="Contact" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/ContactUs.aspx">Contact Us</asp:LinkButton>
+                        <asp:LinkButton ID="About" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Aboutus.aspx">About Us</asp:LinkButton>
+                    </div></div>
                     <div class="navbar-nav">
                         <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton1" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Home.aspx">View</asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton2" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Donation.aspx">Donation</asp:LinkButton>
+                        <asp:LinkButton ID="LoginLink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -35,16 +35,16 @@
         <p>
             &nbsp;
         </p>
-        
+
         <div class="row">
             <div class="container col-md-6 px-5 ">
                 <h2 class="py-3 text-secondary text-sm-center">Login Form</h2>
-                                <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
+                <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
 
                 <div class="form-group my-3">
                     <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="Name" ErrorMessage="Username is required." Font-Bold="False" Font-Size="Small" ForeColor="Red" ToolTip="Username is Required">*</asp:RequiredFieldValidator>
                     UserName :                
-                    <asp:TextBox ID="Name" class="form-control" runat="server" placeholder="Enter User Name" ></asp:TextBox>
+                    <asp:TextBox ID="Name" class="form-control" runat="server" placeholder="Enter User Name"></asp:TextBox>
                     <%--                    <asp:RequiredFieldValidator ID="RequiredFieldValidator_Name" runat="server" Display="Dynamic" ErrorMessage="*User Name is Mandatory" ForeColor="Red" ControlToValidate="Name"></asp:RequiredFieldValidator>--%>
                 </div>
 
