@@ -12,7 +12,8 @@ namespace ClothDonationApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           /* Label1.Text = Session["ErrorMsg"].ToString();*/
+            if (Session["ErrorMsg"] != null)
+                Label1.Text = Session["ErrorMsg"].ToString();
         }
 
         protected void LoginSubmit_Click(object sender, EventArgs e)

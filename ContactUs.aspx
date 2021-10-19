@@ -34,7 +34,14 @@
                     </div>
                     <div class="navbar-nav">
                         <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
-                        <asp:LinkButton ID="Login" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
+                        <%if (!(Session["UserId"] != null && Session["Username"] != null))
+                            { %>
+                        <asp:LinkButton ID="Login" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx" CausesValidation="False">Login</asp:LinkButton>
+                        <%}
+                        else
+                        { %>
+                        <asp:LinkButton ID="Logout" runat="server" class="nav-item text-white nav-link " CausesValidation="False" PostBackUrl="~/Logout.aspx">Logout</asp:LinkButton>
+                        <%} %>
                     </div>
                 </div>
             </div>

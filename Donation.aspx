@@ -26,7 +26,7 @@
                         <asp:LinkButton ID="About" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Aboutus.aspx">About Us</asp:LinkButton>
                     </div>
                     <div class="navbar-nav">
-                        <asp:Button ID="Logout" runat="server" class="nav-item text-white nav-link bg-danger logout" Text="Logout" Style="border: 0px; border-radius: 5px" />
+                        <asp:LinkButton ID="Logout" runat="server" class="nav-item text-white nav-link " CausesValidation="False" PostBackUrl="~/Logout.aspx">Logout</asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -39,10 +39,10 @@
                 <h2 class="py-3  text-sm-center"><i>Make a Donation</i></h2>
                 <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
 
-                <div class="form-group my-3">
+               <div class="form-group my-3">
                     Donor Name :                
-                        <asp:TextBox ID="DonarName" class="form-control" placeholder="Enter Donor's Name" runat="server" ToolTip="Enter Donar's Name"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredDonarName" runat="server" ControlToValidate="DonarName" Font-Size="Small" ForeColor="Red">*This Field is Required.</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="Name" runat="server" class="form-control" placeholder="Enter Donor's Name"  ToolTip="Enter Donar's Name" CausesValidation="True"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredDonarName" runat="server" ControlToValidate="Name" Font-Size="Small" ForeColor="Red">*This Field is Required.</asp:RequiredFieldValidator>
                 </div>
 
                 <div class="form-group my-3">

@@ -76,7 +76,6 @@
     <Content Include="Aboutus.aspx" />
     <Content Include="AddCity.aspx" />
     <Content Include="AdminHome.aspx" />
-    <Content Include="AllDonation_List.aspx" />
     <Content Include="App_Data\ClothDonationDb.mdf" />
     <Content Include="App_Data\ClothDonationDb_log.ldf">
       <DependentUpon>ClothDonationDb.mdf</DependentUpon>
@@ -88,6 +87,7 @@
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="ManageCity.aspx" />
     <Content Include="ManageDonar.aspx" />
     <Content Include="ManagePickup.aspx" />
@@ -128,13 +128,6 @@
     </Compile>
     <Compile Include="AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AllDonation_List.aspx.cs">
-      <DependentUpon>AllDonation_List.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AllDonation_List.aspx.designer.cs">
-      <DependentUpon>AllDonation_List.aspx</DependentUpon>
     </Compile>
     <Compile Include="City.cs">
       <DependentUpon>UserDonationModel.tt</DependentUpon>
@@ -179,6 +172,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCity.aspx.cs">
       <DependentUpon>ManageCity.aspx</DependentUpon>

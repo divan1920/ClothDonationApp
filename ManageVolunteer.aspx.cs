@@ -9,8 +9,11 @@ namespace ClothDonationApp
 {
     public partial class ManageVolunteer : System.Web.UI.Page
     {
+        ClothDonationDbEntities db = new ClothDonationDbEntities();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            User[] user = db.Users.Where(u=>u.Role == 1).ToArray();
             if (!(Session["Username"] != null && Session["UserId"] != null))
             {
                 Session["ErrorMsg"] = "Please Log in";

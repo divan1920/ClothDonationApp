@@ -17,7 +17,7 @@ namespace ClothDonationApp
             }
             else
             {
-                Username.Text = Session["Username"].ToString();
+                Username.Text = Session["Username"].ToString()+" "+Session["UserId"].ToString()+" "+Session["Role"].ToString();
             }
         }
 

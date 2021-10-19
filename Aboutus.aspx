@@ -20,13 +20,17 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <asp:LinkButton ID="Home" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Login.aspx">Home</asp:LinkButton>
-                        <asp:LinkButton ID="Contact" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/ContactUs.aspx">Contact Us</asp:LinkButton>
-                        <asp:LinkButton ID="About" class="nav-item text-white nav-link active" runat="server" PostBackUrl="~/Aboutus.aspx">About Us</asp:LinkButton>
+                        <asp:LinkButton ID="Home" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Login.aspx" CausesValidation="False">Home</asp:LinkButton>
+                        <asp:LinkButton ID="Contact" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/ContactUs.aspx" CausesValidation="False">Contact Us</asp:LinkButton>
+                        <asp:LinkButton ID="About" class="nav-item text-white nav-link active" runat="server" PostBackUrl="~/Aboutus.aspx" CausesValidation="False">About Us</asp:LinkButton>
                     </div>
                     <div class="navbar-nav">
-                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
-                        <asp:LinkButton ID="Login" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
+                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx" CausesValidation="False">Sign Up</asp:LinkButton>
+                        <%if (!(Session["UserId"] != null && Session["Username"] != null)) { %>
+                            <asp:LinkButton ID="Login" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx" CausesValidation="False">Login</asp:LinkButton>
+                        <%} else{ %>
+                            <asp:LinkButton ID="Logout" runat="server" class="nav-item text-white nav-link " CausesValidation="False" PostBackUrl="~/Logout.aspx">Logout</asp:LinkButton>
+                        <%} %>
                     </div>
                 </div>
             </div>

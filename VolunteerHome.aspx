@@ -25,7 +25,7 @@
                         <asp:LinkButton ID="About" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Aboutus.aspx">About Us</asp:LinkButton>
                     </div>
                     <div class="navbar-nav">
-                        <asp:Button ID="Logout" runat="server" class="nav-item text-white nav-link bg-danger logout" Text="Logout" Style="border: 0px; border-radius: 5px" />
+                        <asp:LinkButton ID="Logout" runat="server" class="nav-item text-white nav-link bg-danger logout" CausesValidation="False" PostBackUrl="~/Logout.aspx">Logout</asp:LinkButton>
 <%--                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
                         <asp:LinkButton ID="LinkButton1" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Home.aspx">View</asp:LinkButton>
                         <asp:LinkButton ID="LinkButton2" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Donation.aspx">Donation</asp:LinkButton>--%>
@@ -92,7 +92,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Book PickUp</h5>
                         <p class="card-text">Click here to book Pickup for Your Donation. You can Donate Books , CLothes , Furniture , etc to Needed Person.</p>
-                        <asp:HyperLink ID="VolunteerDonationLink" runat="server" NavigateUrl="~/DonarHome.aspx" CssClass="btn btn-primary">Donate &#8614;</asp:HyperLink>
+                        <asp:HyperLink ID="VolunteerDonationLink" runat="server" NavigateUrl="~/Donation.aspx" CssClass="btn btn-primary">Donate &#8614;</asp:HyperLink>
                     </div>
                 </div>
                 <div class="col-sm-2"></div>

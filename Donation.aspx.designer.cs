@@ -57,7 +57,7 @@ namespace ClothDonationApp
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Logout;
+        protected global::System.Web.UI.WebControls.LinkButton Logout;
 
         /// <summary>
         /// Label2 control.
@@ -69,13 +69,13 @@ namespace ClothDonationApp
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// DonarName control.
+        /// Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DonarName;
+        protected global::System.Web.UI.WebControls.TextBox Name;
 
         /// <summary>
         /// RequiredDonarName control.

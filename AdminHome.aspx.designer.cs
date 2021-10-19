@@ -57,7 +57,7 @@ namespace ClothDonationApp
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Logout;
+        protected global::System.Web.UI.WebControls.LinkButton Logout;
 
         /// <summary>
         /// home control.

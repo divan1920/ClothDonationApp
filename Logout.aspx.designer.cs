@@ -10,7 +10,7 @@
 
 namespace ClothDonationApp
 {
-    public partial class AllDonation_List
+    public partial class Logout
     {
 
         /// <summary>

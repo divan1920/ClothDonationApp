@@ -18,18 +18,20 @@ namespace ClothDonationApp
         protected void SignUpSubmit_Click(object sender, EventArgs e)
         {
             ClothDonationDbEntities db = new ClothDonationDbEntities();
-
-            User user = new User
-            {
-                Name = Name.Text,
-                Email = Email.Text,
-                Password = Password.Text,
-                Address = Address.Text,
-                Role = Convert.ToInt32(RoleList.SelectedItem.Value.ToString()),
-                City = CityList.SelectedItem.Text,
-            };
-            db.Users.Add(user);
-            try { db.SaveChanges(); }
+            
+            try {
+                User user = new User
+                {
+                    Name = Name.Text,
+                    Email = Email.Text,
+                    Password = Password.Text,
+                    Address = Address.Text,
+                    Role = Convert.ToInt32(RoleList.SelectedItem.Value),
+                    City = CityList.SelectedItem.Text,
+                };
+               db.Users.Add(user);
+               db.SaveChanges();
+            }
             catch(DbEntityValidationException e1)
             {
                 //Label1.Text = e1.Message;
@@ -41,6 +43,11 @@ namespace ClothDonationApp
                         Label1.Text = "-Property:"+ ev.PropertyName+", Error: "+ ev.ErrorMessage;
                     }
                 }
+            }
+            catch(FormatException e2)
+            {
+                e2 = (FormatException)e2.GetBaseException();
+                Label1.Text = "Source:" + e2.Source + "  Stackstrace: "+e2.StackTrace + "\nInner: "+( (e2.InnerException != null)? e2.InnerException.ToString():"");
             }
 
             Response.Redirect("~/Login.aspx");

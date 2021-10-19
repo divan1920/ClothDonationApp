@@ -21,13 +21,13 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav">
                     <div class="navbar-nav">
-                        <asp:LinkButton ID="Home" class="nav-item text-white nav-link active mr-2" runat="server" PostBackUrl="~/AdminHome.aspx">Home</asp:LinkButton>
-                        <asp:LinkButton ID="Contact" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/ContactUs.aspx">Contact Us</asp:LinkButton>
-                        <asp:LinkButton ID="About" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Aboutus.aspx">About Us</asp:LinkButton>
+                        <asp:LinkButton ID="Home" class="nav-item text-white nav-link active mr-2" runat="server" PostBackUrl="~/Home.aspx" CausesValidation="False">Home</asp:LinkButton>
+                        <asp:LinkButton ID="Contact" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/ContactUs.aspx" CausesValidation="False">Contact Us</asp:LinkButton>
+                        <asp:LinkButton ID="About" class="nav-item text-white nav-link" runat="server" PostBackUrl="~/Aboutus.aspx" CausesValidation="False">About Us</asp:LinkButton>
                     </div></div>
                     <div class="navbar-nav">
-                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
-                        <asp:LinkButton ID="LoginLink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
+                        <asp:LinkButton ID="Signuplink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/SignUp.aspx" CausesValidation="False">Sign Up</asp:LinkButton>
+                        <asp:LinkButton ID="LoginLink" class="nav-item text-white nav-link " runat="server" PostBackUrl="~/Login.aspx" CausesValidation="False">Login</asp:LinkButton>
                     </div>
                 </div>
             </div>

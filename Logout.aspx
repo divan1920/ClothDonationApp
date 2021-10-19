@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AllDonation_List.aspx.cs" Inherits="ClothDonationApp.AllDonation_List" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Logout.aspx.cs" Inherits="ClothDonationApp.Logout" %>
 
 <!DOCTYPE html>
 

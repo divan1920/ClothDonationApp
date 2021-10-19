@@ -23,24 +23,29 @@ namespace ClothDonationApp
         protected void Donation_Submit_Click(object sender, EventArgs e)
         {
             ClothDonationDbEntities db = new ClothDonationDbEntities();
-            
-            Donation donation = new Donation
+            string Donarname = this.Name.Text;
+            string Contentsize = this.ContentList.SelectedItem.Text;
+            string city = this.CityList.SelectedItem.Text;
+            try 
             {
-                
-                UserId = Convert.ToInt32(Session["UserId"]),
-                DonarName = DonarName.Text,
-                Mobile = Convert.ToInt32(MobileNo.Text),
-                City = CityList.SelectedItem.Text,
-                ContentSize = ContentList.SelectedItem.Text,
-                Status = "Pending",
-            };
+                Donation donation = new Donation
+                {
 
-            db.Donations.Add(donation);
-            try { db.SaveChanges(); }
+                    UserId = Convert.ToInt32(Session["UserId"]),
+                    Mobile = Convert.ToInt64(this.MobileNo.Text),
+                    City = city,
+                    ContentSize = Contentsize,
+                    Status = "Pending",
+                    DonarName = Donarname,
+                };
+                db.Donations.Add(donation);
+                db.SaveChanges();
+                
+            }
             catch (DbEntityValidationException e1)
             {
-                //Label1.Text = e1.Message;
-                foreach (var eve in e1.EntityValidationErrors)
+                Label2.Text = e1.Message;
+               foreach (var eve in e1.EntityValidationErrors)
                 {
                     Console.WriteLine("Entity of type \" {0}\" in state \" {1}\" has the following validation errors :", eve.Entry.Entity.GetType().Name, eve.Entry.State);
                     foreach (var ev in eve.ValidationErrors)
